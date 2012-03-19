@@ -16,7 +16,8 @@ sub get_values {
 }
 
 sub set_values {
-  #
+  my ($self, @args) = @_;
+  $self->{values} = @args;
 }
 
 1;
