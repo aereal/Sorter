@@ -4,7 +4,7 @@ use warnings;
 
 sub new {
   my $class = shift;
-  bless {}, $class;
+  bless {values => []}, $class;
 }
 
 sub sort {
