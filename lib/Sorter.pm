@@ -20,12 +20,13 @@ sub sort {
 }
 
 sub get_values {
-  #
+  my $self = shift;
+  return @{ $self->{values} };
 }
 
 sub set_values {
   my ($self, @args) = @_;
-  $self->{values} = @args;
+  $self->{values} = \@args;
 }
 
 1;
