@@ -15,4 +15,8 @@ sub get_values {
   #
 }
 
+sub set_values {
+  #
+}
+
 1;
