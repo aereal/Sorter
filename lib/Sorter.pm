@@ -21,7 +21,11 @@ sub sort {
 
 sub count {
     my $self = shift;
-    return scalar($self->get_values);
+    return Sorter::_count($self->get_values);
+}
+
+sub _count {
+    return scalar(@_);
 }
 
 sub medium {
