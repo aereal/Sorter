@@ -32,6 +32,21 @@ sub count: Tests {
   is $sorter->count, 3;
 }
 
+sub medium : Tests {
+    my $sorter = Sorter->new;
+
+    is $sorter->medium, undef;
+
+    $sorter->set_values(1, 2, 3);
+    is $sorter->medium, 2;
+
+    $sorter->set_values(9, 8, 7, 6);
+    is $sorter->medium, 7;
+
+    $sorter->set_values(1, -9, 2, -8, 3, -7);
+    is $sorter->medium, -8;
+}
+
 sub sort : Tests {
     my $sorter = Sorter->new;
     $sorter->sort;

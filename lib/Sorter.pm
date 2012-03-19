@@ -24,6 +24,16 @@ sub count {
     return scalar($self->get_values);
 }
 
+sub medium {
+    my $self = shift;
+    if ($self->count) {
+        my @values = $self->get_values;
+        return $values[int($self->count / 2)];
+    } else {
+        return;
+    }
+}
+
 sub get_values {
     my $self = shift;
     return @{ $self->{values} };
