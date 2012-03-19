@@ -7,4 +7,8 @@ sub new {
   bless {}, $class;
 }
 
+sub sort {
+  #
+}
+
 1;
