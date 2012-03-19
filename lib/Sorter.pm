@@ -1,1 +1,5 @@
-# implement this
+package Sorter;
+use strict;
+use warnings;
+
+1;
