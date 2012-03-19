@@ -4,7 +4,15 @@ use warnings;
 
 sub new {
   my $class = shift;
-  bless {values => []}, $class;
+  my $self = {};
+  bless $self, $class;
+  $self->initialize;
+  return $self;
+}
+
+sub initialize {
+  my $self = shift;
+  $self->set_values;
 }
 
 sub sort {
