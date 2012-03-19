@@ -19,6 +19,11 @@ sub sort {
     #
 }
 
+sub count {
+    my $self = shift;
+    return scalar($self->get_values);
+}
+
 sub get_values {
     my $self = shift;
     return @{ $self->{values} };
