@@ -29,10 +29,12 @@ sub _count {
 }
 
 sub medium {
-    my $self = shift;
-    if ($self->count) {
-        my @values = $self->get_values;
-        return $values[int($self->count / 2)];
+    return Sorter::_medium(shift->get_values);
+}
+
+sub _medium {
+    if (my $count = Sorter::_count(@_)) {
+        return $_[int($count / 2)];
     } else {
         return;
     }
