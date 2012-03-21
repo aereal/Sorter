@@ -19,22 +19,13 @@ sub sort {
     #
 }
 
-sub count {
-    my $self = shift;
-    return Sorter::_count($self->get_values);
-}
-
-sub _count {
-    return scalar(@_);
-}
-
 sub medium {
     return Sorter::_medium(shift->get_values);
 }
 
 sub _medium {
-    if (my $count = Sorter::_count(@_)) {
-        return $_[int($count / 2)];
+    if (scalar(@_)) {
+        return $_[int(scalar(@_) / 2)];
     } else {
         return;
     }

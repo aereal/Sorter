@@ -23,15 +23,6 @@ sub values : Tests {
     is_deeply [$sorter->get_values], [1,2,3,4,5];
 }
 
-sub count: Tests {
-  my $sorter = Sorter->new;
-
-  is $sorter->count, 0;
-
-  $sorter->set_values(1, 2, 3);
-  is $sorter->count, 3;
-}
-
 sub medium : Tests {
     my $sorter = Sorter->new;
 
