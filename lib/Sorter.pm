@@ -14,13 +14,13 @@ sub larger_than {
 }
 
 sub quick_sort {
-    my ($c, $array) = @_;
+    my ($class, $array) = @_;
     return $array unless scalar(@$array);
     my ($pivot, $less, $larger);
 
     $pivot = shift @$array;
-    $less = $c->quick_sort([$c->less_than($pivot, $array)]);
-    $larger = $c->quick_sort([$c->larger_than($pivot, $array)]);
+    $less = $class->quick_sort([$class->less_than($pivot, $array)]);
+    $larger = $class->quick_sort([$class->larger_than($pivot, $array)]);
 
     return [@$less, $pivot, @$larger];
 }
