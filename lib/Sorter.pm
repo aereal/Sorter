@@ -24,11 +24,7 @@ sub medium {
 }
 
 sub _medium {
-    if (scalar(@_)) {
-        return $_[int(scalar(@_) / 2)];
-    } else {
-        return;
-    }
+    return scalar(@_) ? @_[int(scalar(@_) / 2)] : ();
 }
 
 sub get_values {
