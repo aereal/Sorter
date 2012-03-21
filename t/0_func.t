@@ -6,78 +6,66 @@ use Test::More;
 use Sorter;
 use 5.010;
 
-sub less_than : Tests {
+subtest less_than => sub{
     my $c = 'Sorter';
 
-    {
-        say "when given empty list";
+    subtest given_empty_list => sub {
         my $given = [];
         is_deeply [$c->less_than($given->[0], $given)], [];
-    }
+    };
 
-    {
-        say "when given one element list";
+    subtest given_one_element_list => sub {
         my $given = [1];
         is_deeply [$c->less_than($given->[0], $given)], [];
-    }
+    };
 
-    {
-        say "when given two different elements list";
+    subtest given_2_different_elements_list => sub {
         my $given = [1, 2];
         is_deeply [$c->less_than($given->[0], $given)], [];
-    }
-}
+    };
+};
 
-sub larger_than : Tests {
+subtest larger_than => sub {
     my $c = 'Sorter';
 
-    {
-        say "when given empty list";
+    subtest given_empty_list => sub {
         my $given = [];
         is_deeply [$c->larger_than($given->[0], $given)], [];
-    }
+    };
 
-    {
-        say "when given one element list";
+    subtest given_1_element_list => sub{
         my $given = [1];
         is_deeply [$c->larger_than($given->[0], $given)], [1];
-    }
+    };
 
-    {
-        say "when given two different elements list";
+    subtest given_2_different_elements_list => sub {
         my $given = [1, 2];
         is_deeply [$c->larger_than($given->[0], $given)], [1, 2];
-    }
+    };
 
-    {
-        say "when given 3 different elements list";
+    subtest given_3_different_elements_list => sub {
         my $given = [3, 2, 1];
         is_deeply [$c->larger_than($given->[0], $given)], [3];
-    }
-}
+    };
+};
 
-sub quick_sort : Tests {
+subtest quick_sort => sub {
     my $c = 'Sorter';
 
-    {
-        say "when given empty array";
+    subtest given_empty_list => sub {
         my $given = [];
         is_deeply $c->quick_sort($given), [];
-    }
+    };
 
-    {
-        say "when given one element array";
+    subtest given_1_element_list => sub {
         my $given = [1];
         is_deeply $c->quick_sort($given), [1];
-    }
+    };
 
-    {
-        say "when given multiple elements array";
+    subtest given_multiple_elements => sub {
         my $given = [3, 1, 2];
         is_deeply $c->quick_sort($given), [1, 2, 3];
-    }
-}
+    };
+};
 
-__PACKAGE__->runtests;
-
-1;
+done_testing;
