@@ -19,14 +19,6 @@ sub sort {
     #
 }
 
-sub medium {
-    return Sorter::_medium(shift->get_values);
-}
-
-sub _medium {
-    return scalar(@_) ? @_[int(scalar(@_) / 2)] : ();
-}
-
 sub get_values {
     my $self = shift;
     return @{ $self->{values} };
