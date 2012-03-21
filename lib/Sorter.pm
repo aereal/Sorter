@@ -39,7 +39,8 @@ sub initialize {
 }
 
 sub sort {
-    #
+    my $self = shift;
+    $self->set_values(@{Sorter->quick_sort([$self->get_values])});
 }
 
 sub get_values {
